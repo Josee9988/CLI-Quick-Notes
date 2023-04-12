@@ -22,31 +22,51 @@
 
 ## ⚡ **Installation**
 
-* <!-- ... [SHOW HOW YOUR PROJECT IS INSTALLED] -->
+1. Clone the repository and enter the directory:
+2. Make the script executable from anywhere:
+
+  ```bash
+    sudo bash MAKE_SCRIPT_GLOBAL.sh
+  ```
+
+3. Run the script from anywhere in your system:
+
+  ```bash
+    qnote "my first note"
+  ```
 
 ---
 
 ## 🚀 **Usage**
 
-* <!-- ... [SHOW HOW YOUR PROJECT IS USED] -->
+```text
+  Usage:
+  qnote                                      Displays all notes.
+  qnote [-a|--add] <note>                    Adds a note at the end.
+  qnote <note>                               Adds a note at the end.
+  qnote -h|--help                            Display this help text.
+  qnote [-r|-d|--remove|--delete] <index>    Removes a note by its index (position or line number).
+  qnote [-c|--clear]                         Removes all the notes.
+```
 
 ---
 
 ## 🌲 **Project tree**
 
-<!-- ... [SHOW YOUR PROJECT TREE HERE IF USEFUL] -->
+```bash
+.
+├── MAKE_SCRIPT_GLOBAL.sh
+├── qnote
+└── README.md
+
+0 directories, 3 files
+```
 
 ---
 
 ## 📝 **Additional notes**
 
-* <!-- ... [ADD ADDITIONAL NOTES] -->
-
----
-
-## 📸 **Screenshots**
-
-<!-- ... [SOME DESCRIPTIVE IMAGES] -->
+* If you change the repository location, you must run the MAKE_SCRIPT_GLOBAL.sh script again.
 
 ---
 

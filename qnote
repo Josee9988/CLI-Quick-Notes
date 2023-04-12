@@ -27,7 +27,7 @@ add_note() {
 
 case "$1" in
 -h | --help)
-    echo -e "\e[1mUso:\e[0m"
+    echo -e "\e[1mUsage:\e[0m"
     echo "  qnote                                      Displays all notes."
     echo "  qnote [-a|--add] <note>                    Adds a note at the end."
     echo "  qnote <note>                               Adds a note at the end."
