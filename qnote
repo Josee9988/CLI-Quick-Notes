@@ -1,15 +1,15 @@
 #!/bin/bash
 
-NOTES_FILENAME="/home/${USER}/cli-quick-notes.txt"
+NOTES_FILENAME="/home/${USER}/.cli-quick-notes.txt"
 
 # check if the file exists
-if [[ ! -e "$NOTES_FILE" ]]; then
+if [[ ! -e "$NOTES_FILENAME" ]]; then
     touch "$NOTES_FILENAME"
 fi
 
 check_occurrence() {
     local note=$1
-    if grep -q -x "$note" "$NOTES_FILE"; then
+    if grep -q -x "$note" "$NOTES_FILENAME"; then
         echo "Error: the note '$note' already exists."
         exit 1
     fi
@@ -28,12 +28,12 @@ add_note() {
 case "$1" in
 -h | --help)
     echo -e "\e[1mUso:\e[0m"
-    echo "  $0                                      Displays all notes."
-    echo "  $0 [-a|--add] <nota>                    Adds a note at the end."
-    echo "  $0 <nota>                               Adds a note at the end."
-    echo "  $0 -h|--help                            Display this help text."
-    echo "  $0 [-r|-d|--remove|--delete] <índice>   Removes a note by its index (position or line number)."
-    echo "  $0 [-c|--clear]                         Removes all the notes."
+    echo "  qnote                                      Displays all notes."
+    echo "  qnote [-a|--add] <note>                    Adds a note at the end."
+    echo "  qnote <note>                               Adds a note at the end."
+    echo "  qnote -h|--help                            Display this help text."
+    echo "  qnote [-r|-d|--remove|--delete] <index>    Removes a note by its index (position or line number)."
+    echo "  qnote [-c|--clear]                         Removes all the notes."
     ;;
 -a | --add)
     shift
