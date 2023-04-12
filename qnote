@@ -1,0 +1,53 @@
+#!/bin/bash
+
+FILENAME="/home/${USER}/cli-quick-notes.txt"
+
+# check if the file exists
+if [ ! -e "$FILENAME" ]; then
+    touch "$FILENAME"
+fi
+
+check_occurrence() {
+    local note=$1
+    if grep -q -x "$note" "$FILENAME"; then
+        echo "Error: the note '$note' already exists."
+        exit 1
+    fi
+}
+
+add_note() {
+    local note=$(echo "$1" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+    check_occurrence "$note"
+    if [ -z "$note" ]; then # no note was found, so we show all the notes
+        nl -b a "$FILENAME"
+        exit 0
+    fi
+    echo "$note" >>"$FILENAME"
+}
+
+case "$1" in
+-h | --help)
+    echo -e "\e[1mUso:\e[0m"
+    echo "  $0                                      Displays all notes."
+    echo "  $0 [-a|--add] <nota>                    Adds a note at the end."
+    echo "  $0 <nota>                               Adds a note at the end."
+    echo "  $0 -h|--help                            Display this help text."
+    echo "  $0 [-r|-d|--remove|--delete] <índice>   Removes a note by its index (position or line number)."
+    echo "  $0 [-c|--clear]                         Removes all the notes."
+    ;;
+-a | --add)
+    shift
+    add_note "$1"
+    ;;
+-r | -d | --remove | --delete)
+    sed -i "${2}d" "$FILENAME"
+    ;;
+-c | --clear)
+    echo -n "" >"$FILENAME"
+    ;;
+*)
+    add_note "$1"
+    ;;
+esac
+
+exit 0 # ok error

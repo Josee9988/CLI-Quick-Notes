@@ -4,10 +4,6 @@
 
 <div align="center">
   <!-- Change your logo -->
-  <a href="https://github.com/Josee9988/CLI-Quick-Notes">
-    <img width="100%" src="https://i.imgur.com/SVvgxJF.png" alt="@Josee9988/CLI-Quick-Notes's logo">
-  </a>
-  <br>
   <a href="https://github.com/Josee9988/CLI-Quick-Notes/issues">
     <img src="https://img.shields.io/github/issues/Josee9988/CLI-Quick-Notes?color=0088ff&style=for-the-badge&logo=github" alt="Josee9988/CLI-Quick-Notes's issues"/>
   </a>
@@ -20,7 +16,7 @@
 
 ## 🤔 **About the project**
 
-* <!-- ... [WHY DID YOU CREATED THIS PROJECT?, MOTIVATION, PURPOSE, DESCRIPTION, OBJECTIVES, etc] -->
+* A simple Shell Script tool to manage your quick notes. (list, add and remove your annotations).
 
 ---
 
@@ -56,31 +52,13 @@
 
 ## 🍰 **Supporters and donators**
 
-<!-- Change your small logo -->
-<a href="https://github.com/Josee9988/CLI Quick-Notes">
-  <img alt="@Josee9988/CLI Quick-Notes's brand logo without text" align="right" src="https://i.imgur.com/3qK1sie.png" width="18%" />
-</a>
-
-
 We are currently looking for new donators to help and maintain this project! ❤️
 
 By donating, you will help the development of this project, and *you will be featured in this CLI-Quick-Notes's README.md*, so everyone can see your kindness and visit your content ⭐.
 
-<a href="https://github.com/sponsors/Josee9988"> <!-- MODIFY THIS LINK TO YOUR MAIN DONATING SITE IF YOU ARE NOT IN THE GITHUB SPONSORS PROGRAM -->
-  <img src="https://img.shields.io/badge/Sponsor-Josee9988/CLI Quick-Notes-blue?logo=github-sponsors&style=for-the-badge&color=red">
-</a>
-
-<!-- LINK TO YOUR DONATING PAGES HERE -->
-
 ---
 
 CLI-Quick-Notes was generated from *[Josee9988/project-template](https://github.com/Josee9988/project-template)* 📚
-
----
-
-## 🕵️ Extra recommendations
-
-* <!-- If you recommend installing anything special, or if you recommend using X thing for the good use of your project...-->
 
 ---
 
@@ -97,11 +75,9 @@ Enjoy! 😃
 
 ---
 
-## ⚖️📝 **License and Changelog**
+## ⚖️📝 **License**
 
 See the license in the '**[LICENSE](LICENSE)**' file.
-
-Watch the changes in the '**[CHANGELOG.md](CHANGELOG.md)**' file.
 
 ---
 
