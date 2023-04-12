@@ -1,15 +1,15 @@
 #!/bin/bash
 
-FILENAME="/home/${USER}/cli-quick-notes.txt"
+NOTES_FILENAME="/home/${USER}/cli-quick-notes.txt"
 
 # check if the file exists
-if [ ! -e "$FILENAME" ]; then
-    touch "$FILENAME"
+if [[ ! -e "$NOTES_FILE" ]]; then
+    touch "$NOTES_FILENAME"
 fi
 
 check_occurrence() {
     local note=$1
-    if grep -q -x "$note" "$FILENAME"; then
+    if grep -q -x "$note" "$NOTES_FILE"; then
         echo "Error: the note '$note' already exists."
         exit 1
     fi
@@ -18,11 +18,11 @@ check_occurrence() {
 add_note() {
     local note=$(echo "$1" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
     check_occurrence "$note"
-    if [ -z "$note" ]; then # no note was found, so we show all the notes
-        nl -b a "$FILENAME"
+    if [[ -z "$note" ]]; then
+        nl -b a "$NOTES_FILENAME"
         exit 0
     fi
-    echo "$note" >>"$FILENAME"
+    echo "$note" >>"$NOTES_FILENAME"
 }
 
 case "$1" in
@@ -40,10 +40,10 @@ case "$1" in
     add_note "$1"
     ;;
 -r | -d | --remove | --delete)
-    sed -i "${2}d" "$FILENAME"
+    sed -i "${2}d" "$NOTES_FILENAME"
     ;;
 -c | --clear)
-    echo -n "" >"$FILENAME"
+    echo -n "" >"$NOTES_FILENAME"
     ;;
 *)
     add_note "$1"
