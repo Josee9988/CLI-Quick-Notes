@@ -18,7 +18,7 @@ check_occurrence() {
 add_note() {
     local note=$(echo "$1" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
     check_occurrence "$note"
-    if [[ -z "$note" ]]; then
+    if [[ -z "$note" ]]; then # shows all notes
         nl -b a "$NOTES_FILENAME"
         exit 0
     fi
